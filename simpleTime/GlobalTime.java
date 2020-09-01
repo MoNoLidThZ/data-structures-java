@@ -31,7 +31,7 @@ public class GlobalTime extends SimpleTime {
   }
 
   public GlobalTime(GlobalTime otherTime) {
-    super(otherTime.getHour(), otherTime.getMinute(), otherTime.getSecond());
+    this(otherTime.getHour(), otherTime.getMinute(), otherTime.getSecond(), otherTime.getZone());
   }
 
   public int getZone() {
