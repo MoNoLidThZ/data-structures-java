@@ -43,7 +43,7 @@ public class TimeStamp extends SimpleDate {
   }
 
   public TimeStamp(SimpleDate otherDate) {
-    super(otherDate.getMonth(), otherDate.getDay(), otherDate.getYear());
+    this(otherDate.getMonth(), otherDate.getDay(), otherDate.getYear());
   }
 
   public String toString() {
