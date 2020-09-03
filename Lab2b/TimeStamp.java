@@ -47,9 +47,8 @@ public class TimeStamp extends SimpleDate {
   }
 
   public String toString() {
-    String result = "";
 
-    result += months[getMonth() - 1] + " " + getDay() + ", " + getYear() + " at " + time.getHour() + ":"
+    String result = months[getMonth() - 1] + " " + getDay() + ", " + getYear() + " at " + time.getHour() + ":"
         + time.getMinute() + ":" + time.getSecond() + " UTC";
 
     if (time.getZone() > 0) {
@@ -64,6 +63,6 @@ public class TimeStamp extends SimpleDate {
   public static void main(String[] args) {
     TimeStamp ts = new TimeStamp(10, 29, 2009, 10, 50, 45, 4);
 
-    System.out.println(ts);
+    System.out.println(ts); // Output: Oct 29, 2009 at 10:50:45 UTC+4
   }
 }
