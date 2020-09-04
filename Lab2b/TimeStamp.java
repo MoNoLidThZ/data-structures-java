@@ -54,15 +54,18 @@ public class TimeStamp extends SimpleDate {
     if (time.getZone() > 0) {
       result += "+" + time.getZone();
     } else if (time.getZone() < 0) {
-      result += "-" + time.getZone();
+      result += time.getZone();
     }
 
     return result;
   }
 
   public static void main(String[] args) {
-    TimeStamp ts = new TimeStamp(12, 29, 2009, 10, 50, 45, 4);
+    SimpleDate sd = new SimpleDate(10, 15, 2001);
+    TimeStamp ts = new TimeStamp(12, 29, 1986, 10, 50, 45, -8);
+    TimeStamp ts2 = new TimeStamp(sd);
 
-    System.out.println(ts); // Output: Oct 29, 2009 at 10:50:45 UTC+4
+    System.out.println(ts); // Output: Dec 29, 2009 at 10:50:45 UTC-2
+    System.out.println(ts2);
   }
 }
