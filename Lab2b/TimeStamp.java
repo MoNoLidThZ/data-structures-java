@@ -46,6 +46,22 @@ public class TimeStamp extends SimpleDate {
     this(otherDate.getMonth(), otherDate.getDay(), otherDate.getYear());
   }
 
+  public void changeZone(int zone) {
+    if (zone >= -12 || zone <= 12) {
+      int difference = zone - time.getZone();
+      time.setZone(zone);
+      int newHour = time.getHour() + difference;
+
+      if (newHour > 24) {
+        newHour -= 24;
+      } else if (newHour < 0) {
+        newHour += 24;
+      }
+
+      time.setHour(newHour);
+    }
+  }
+
   public String toString() {
 
     String result = months[getMonth() - 1] + " " + getDay() + ", " + getYear() + " at " + time.getHour() + ":"
@@ -67,5 +83,11 @@ public class TimeStamp extends SimpleDate {
 
     System.out.println(ts); // Output: Dec 29, 2009 at 10:50:45 UTC-2
     System.out.println(ts2);
+
+    // testing changeZone method
+    TimeStamp cz = new TimeStamp(23, 11, 1990, 10, 50, 45, 2);
+    System.out.println(cz);
+    cz.changeZone(-2);
+    System.out.println(cz);
   }
 }
