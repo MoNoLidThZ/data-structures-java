@@ -10,10 +10,6 @@ public class TimeStamp extends SimpleDate {
     time = new GlobalTime(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), cal.get(Calendar.SECOND),
         cal.get(Calendar.ZONE_OFFSET));
   }
-  // public TimeStamp() {
-  // super(1, 1, 1);
-  // time = new GlobalTime();
-  // }
 
   public TimeStamp(int y) {
     super(1, 1, y);
